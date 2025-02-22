@@ -1,0 +1,55 @@
+# Project: QKD Simulator Grafana
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_draw.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_tables.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_widgets.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_opengl2.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_sdl2.o LIBS/ImGuiFileDialog-master/ImGuiFileDialog.o key_interface.o data_bases.o
+LINKOBJ  = main.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_draw.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_tables.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_widgets.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_opengl2.o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_sdl2.o LIBS/ImGuiFileDialog-master/ImGuiFileDialog.o key_interface.o data_bases.o
+LIBS     = -L"C:/c++/TDM-GCC-64/lib" -L"C:/c++/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -L"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2-2.30.8/x86_64-w64-mingw32/lib" -L"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2_image-2.8.2/x86_64-w64-mingw32/lib" -L"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/imgui-1.91.4-docking" -L"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/mysql-8.0.41-winx64/lib" -lSDL2 -lSDL2main -lSDL2_image -lopengl32 -Iimgui -llibmysql -g3
+INCS     = -I"C:/c++/TDM-GCC-64/include" -I"C:/c++/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/c++/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2-2.30.8/x86_64-w64-mingw32/include" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2_image-2.8.2/x86_64-w64-mingw32/include" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2-2.30.8/x86_64-w64-mingw32/include/SDL2" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/imgui-1.91.4-docking" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/imgui-1.91.4-docking/backends" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/ImGuiFileDialog-master" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/mysql-8.0.41-winx64/include"
+CXXINCS  = -I"C:/c++/TDM-GCC-64/include" -I"C:/c++/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/c++/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/c++/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2-2.30.8/x86_64-w64-mingw32/include" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2_image-2.8.2/x86_64-w64-mingw32/include" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/SDL2-2.30.8/x86_64-w64-mingw32/include/SDL2" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/imgui-1.91.4-docking" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/imgui-1.91.4-docking/backends" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/ImGuiFileDialog-master" -I"C:/PROYECTOS/CUbIQ/QKD simulator Grafana/LIBS/mysql-8.0.41-winx64/include"
+BIN      = "QKD simulator Grafana.exe"
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+DEL      = C:\c++\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui.o: ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui.cpp
+	$(CPP) -c ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui.cpp -o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui.o $(CXXFLAGS)
+
+../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_draw.o: ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_draw.cpp
+	$(CPP) -c ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_draw.cpp -o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_draw.o $(CXXFLAGS)
+
+../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_tables.o: ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_tables.cpp
+	$(CPP) -c ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_tables.cpp -o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_tables.o $(CXXFLAGS)
+
+../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_widgets.o: ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_widgets.cpp
+	$(CPP) -c ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_widgets.cpp -o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/imgui_widgets.o $(CXXFLAGS)
+
+../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_opengl2.o: ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_opengl2.cpp
+	$(CPP) -c ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_opengl2.cpp -o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_opengl2.o $(CXXFLAGS)
+
+../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_sdl2.o: ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_sdl2.cpp
+	$(CPP) -c ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_sdl2.cpp -o ../../SDL2/NUCLEO/LIBS/imgui-1.91.4-docking/backends/imgui_impl_sdl2.o $(CXXFLAGS)
+
+LIBS/ImGuiFileDialog-master/ImGuiFileDialog.o: LIBS/ImGuiFileDialog-master/ImGuiFileDialog.cpp
+	$(CPP) -c LIBS/ImGuiFileDialog-master/ImGuiFileDialog.cpp -o LIBS/ImGuiFileDialog-master/ImGuiFileDialog.o $(CXXFLAGS)
+
+key_interface.o: key_interface.cpp
+	$(CPP) -c key_interface.cpp -o key_interface.o $(CXXFLAGS)
+
+data_bases.o: data_bases.cpp
+	$(CPP) -c data_bases.cpp -o data_bases.o $(CXXFLAGS)

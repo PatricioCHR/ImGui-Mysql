@@ -1,0 +1,14 @@
+*.rar
+*.zip
+*.rar
+*.bin
+*.pdb
+*.o
+*.exe
+build/
+*.o
+*.exe
+build/
+*.o
+*.exe
+build/

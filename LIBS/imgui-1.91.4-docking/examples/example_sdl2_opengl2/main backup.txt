@@ -1,0 +1,72 @@
+
+int main (int,char**) 
+{
+	windowSDL ventanamain;
+	SDL_GLContext gl_context;
+		
+	srand(time(NULL));
+	
+	char nombredeventana[]="Nucleo";
+	
+	interfaceNUCLEO::inicializa_NUCLEO();
+	
+	ImGuiIO& io = ImGui::GetIO();			
+    interface::inicializa_interface(ventanamain,nombredeventana,io,gl_context);
+    //interface::inicializa_SDL2(nombredeventana);	    
+    
+#if defined(SDL)
+    Menu::inicializa_texturas ();
+#endif
+        	
+#if defined(SDL)
+	Plataforma::inicializa_Plataforma ();	
+#endif
+        	
+	int ciclo=0;
+
+    while (interfaceNUCLEO::START)
+    {
+    	
+    	interface::preparaRenderizado();
+
+#if defined(SDL)        
+        SDL_KEYBOARD::Input_Keyboard(interface::ventanaSDL.window);        
+#endif
+        
+        /* Codigo de Juego */  		
+		
+		ImGui::Begin("Another Window");   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+        ImGui::Text("Hello from another window!");            
+        ImGui::End();		
+		
+		//Plataforma::Game ();            
+#if defined(SDL)
+        Menu::render_texturas();
+#endif
+        
+        
+        /* Fin de Codigo de Juego */
+#if defined(SDL)
+        interface::renderizaEscena();
+
+
+        SDL_Delay(1);
+#endif
+    }
+    
+#if defined(SDL)
+    Plataforma::destruye_Plataforma();
+#endif
+    
+#if defined(SDL)
+    Menu::destruye_texturas ();
+#endif
+	
+#if defined(SDL)
+	interface::destruye();
+	interface::destruye_SDL2();
+#endif
+	
+    return 0;
+}
+
