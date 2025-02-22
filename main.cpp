@@ -310,15 +310,16 @@ void ventana_de_encriptado (void)
 						
     				ImGui::End();
     				
-    				
+    				/*
     				ImGui::Begin("Algoritmo DATA");
 
     				ImGui::Text("Textbox");
 
-    				ImGui::End();
+    				ImGui::End();*/
     				
     				/********************* Visor de informacion **************************/
     				
+    				/*
     				ImGui::Begin("Output DATA");
     				
 	    				ImGui::Text(cabecera.c_str());
@@ -344,6 +345,7 @@ void ventana_de_encriptado (void)
 	    				//ImGui::EndChild();
 
     				ImGui::End();    							
+    				*/
 					   
 }
 
