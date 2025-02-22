@@ -92,11 +92,17 @@ double timetoupload=0;
 int main(int, char**)
 {
 	
-	char dbas[100]="cubiq_qkd_simulator";
-	char host[300]="localhost";
-	char user[100]="CUbIQ";
-	char pass[100]="Luis130374.";
-	int port=0;
+	//char dbas[100]="cubiq_qkd_simulator";
+	//char host[300]="sql3.freesqldatabase.com";
+	//char user[100]="CUbIQ";
+	//char pass[100]="Luis130374.";
+	//int port=0;
+	
+	char dbas[100]="sql3764042";
+	char host[300]="sql3.freesqldatabase.com";
+	char user[100]="sql3764042";
+	char pass[100]="HJhnIqyMm7";
+	int port=3306;
 
 	char nombredeventana[]="QKD Simulator Grafana";
 	
@@ -171,6 +177,7 @@ void ventana_de_encriptado (void)
 {
 	ImGui::Begin("Input DATA");	
 		
+		/*
 		ImGui::Begin("Mensaje");							
 														
 			sprintf(calign, "%s :","Mensaje");
@@ -203,7 +210,7 @@ void ventana_de_encriptado (void)
 				
 		ImGui::End();
 					
-						ImGui::Separator();
+						ImGui::Separator();*/
 						
 						sprintf(calign, "%s%6s","Llave para encriptar",":");
 						ImGui::Text(calign);

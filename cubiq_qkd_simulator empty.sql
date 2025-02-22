@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `keys`
 --
 
-CREATE TABLE `keys` (
+CREATE TABLE `keyscubiq` (
   `id` bigint(20) NOT NULL,
   `Keyqkd` varchar(250) NOT NULL,
   `Sizekey` int(16) NOT NULL,
